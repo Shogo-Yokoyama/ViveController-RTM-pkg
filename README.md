@@ -21,7 +21,7 @@ VRデバイスの1つであるHTC VIVEとHTC VIVE トラッカー 2018の機能�
 ### 2.2.3. ベースステーション
 ![VIVEベースステーション](images/vive-hardware-base-stations.png)
 ### 2.2.4. トラッカー
-![VIVEトラッカー](images/vive-hardware-tracker-1.png.jpg)  
+![VIVEトラッカー](images/vive-hardware-tracker.png)  
 
 ## 3. 開発コンポーネントの概要
 ### ViveController
