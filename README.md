@@ -8,13 +8,19 @@ VRデバイスの1つであるHTC社のVIVEを対象として，その機能を�
 - PC：ZBOX-EN1070-U
 - OS：Windows 10
 - ソフトウェア：CMake / OpenRTM-aist-1.2.0-RELEASE
-- ハードウェア：HTC VIVE / HTC VIVE Tracker 2018
+- ハードウェア：HTC VIVE / HTC VIVE トラッカー 2018
 - 開発言語：C/C++
 
 ### 2.2. HTC VIVE / HTC VIVE Tracker 2018
-![alt内容](images/vive-hardware-hmd-1.png)
-![alt内容](images/vive-hardware-controllers-1.png)
-![alt内容](images/vive-hardware-base-stations.png)
+VRデバイスの1つであるHTC VIVEとHTC VIVE Tracker 2018の機能について以下に示す．HTC VIVEにはヘッドマウントディスプレイ(以下，HMD)，コントローラ，ベースステーションが含まれている.
+### 2.2.1. HMD
+![VIVE HMD](images/vive-hardware-hmd-1.png)
+### 2.2.2. コントローラ
+![VIVEコントローラ](images/vive-hardware-controllers-1.png)
+### 2.2.3. ベースステーション
+![VIVEベースステーション](images/vive-hardware-base-stations.png)
+### 2.2.4. トラッカー
+![VIVEトラッカー](images/vive-hardware-tracker-1.png)
 
 ## 3. 開発コンポーネントの概要
 ### ViveController
