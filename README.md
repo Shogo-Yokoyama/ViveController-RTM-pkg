@@ -12,7 +12,7 @@ VRデバイスの1つであるHTC社のVIVEを対象として，その機能を�
 - 開発言語：C/C++
 
 ### 2.2. HTC VIVE / HTC VIVE Tracker 2018
-![alt内容](https://www.vive.com/jp/product/vive-hardware-controllers-1.png)
+
 
 ## 3. 開発コンポーネントの概要
 ### ViveController
@@ -21,3 +21,5 @@ VRデバイスの1つであるHTC社のVIVEを対象として，その機能を�
 - VIVE HMDの位置姿勢の管理
 - VIVEトラッカーの位置姿勢の管理
 - VIVE HMDへの画像の出力
+
+## コンポーネントができ次第随時更新いたします
