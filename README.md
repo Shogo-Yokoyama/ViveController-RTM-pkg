@@ -11,6 +11,7 @@ VRデバイスの1つであるHTC社のVIVEを対象として，その機能の�
 - ハードウェア：HTC VIVE / HTC VIVE Tracker 2018
 - 開発言語：C/C++
 
+### 2.2. HTC VIVE
 
 ## 3. 開発コンポーネントの概要
 ### ViveController
