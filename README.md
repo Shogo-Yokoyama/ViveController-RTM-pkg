@@ -16,12 +16,16 @@ VRデバイスの1つであるHTC VIVEとHTC VIVE トラッカー 2018の機能�
 ### 2.2.1. HMD
 ![VIVE HMD](images/vive-hardware-hmd-1.png)
 ### 2.2.2. コントローラ
-直感的な操作が可能な    
+直感的な操作が可能な  
+
 ![VIVEコントローラ](images/vive-hardware-controllers-1.png)
 ### 2.2.3. ベースステーション
+HMD・コントローラ・トラッカーの位置姿勢を推定  
+
 ![VIVEベースステーション](images/vive-hardware-base-stations.png)
 ### 2.2.4. トラッカー
-様々な場所に取り付けてトラッキングをおこなうデバイス
+様々な場所に取り付けてトラッキングをおこなうデバイス  
+
 ![VIVEトラッカー](images/vive-hardware-tracker.png)  
 
 ## 3. 開発コンポーネントの概要
