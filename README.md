@@ -5,9 +5,9 @@ VRデバイスの1つであるHTC社のVIVEを対象として，その機能の�
 
 ## 2. 開発環境
 ### 2.1. 開発環境一覧
-PC : ZBOX-EN1070-U
-  OS : Windows 10
-    ソフトウェア：CMake / OpenRTM-aist-1.2.0-RELEASE
+- PC : ZBOX-EN1070-U
+- OS : Windows 10
+- ソフトウェア：CMake / OpenRTM-aist-1.2.0-RELEASE
 ハードウェア：HTC VIVE / HTC VIVE Tracker 2018
 開発言語：C/C++
 
