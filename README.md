@@ -12,10 +12,11 @@ VRデバイスの1つであるHTC社のVIVEを対象として，その機能を�
 - 開発言語：C/C++
 
 ### 2.2. HTC VIVE / HTC VIVE Tracker 2018
-VRデバイスの1つであるHTC VIVEとHTC VIVE トラッカー 2018の機能について以下に示す．HTC VIVEにはヘッドマウントディスプレイ(以下，HMD)，コントローラ，ベースステーションが含まれている.
+VRデバイスの1つであるHTC VIVEとHTC VIVE トラッカー 2018の機能について以下に示す．HTC VIVEにはヘッドマウントディスプレイ(以下，HMD)，コントローラ，ベースステーションが含まれている
 ### 2.2.1. HMD
 ![VIVE HMD](images/vive-hardware-hmd-1.png)
 ### 2.2.2. コントローラ
+直感的な操作が可能なコントローラ
 ![VIVEコントローラ](images/vive-hardware-controllers-1.png)
 ### 2.2.3. ベースステーション
 ![VIVEベースステーション](images/vive-hardware-base-stations.png)
