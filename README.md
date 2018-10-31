@@ -25,7 +25,7 @@ VRデバイスの1つであるHTC VIVEとHTC VIVE トラッカー 2018の機能�
 ### 2.2.3. トラッカー
 様々な場所に取り付け可能なトラッキングをおこなうデバイス  
 
-![VIVEトラッカー](images/vive-hardware-tracker.png)  
+![VIVEトラッカー](images/vive_tracker_2018.png)  
 ### 2.2.4. ベースステーション
 HMD・コントローラ・トラッカーの位置姿勢を推定するデバイス  
 
