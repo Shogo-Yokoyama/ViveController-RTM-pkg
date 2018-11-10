@@ -1,13 +1,13 @@
 # ViveController-RTM-pkg
 
 ## 1. 概要
-VRデバイスの1つであるHTC社のVIVEを対象として，その機能を簡易的な利用を可能にするRTコンポーネント群
+VRデバイスの1つであるHTC社のVIVEを対象として，その機能の簡易的な利用を可能にするRTコンポーネント群
 
 ## 2. 開発環境
 ### 2.1. 開発環境一覧
 - PC：ZBOX-EN1070-U
 - OS：Windows 10
-- ソフトウェア：CMake / OpenRTM-aist-1.2.0-RELEASE
+- ソフトウェア：CMake / OpenRTM-aist-1.1.2-RELEASE
 - ハードウェア：HTC VIVE / HTC VIVE トラッカー 2018
 - 開発言語：C/C++
 
