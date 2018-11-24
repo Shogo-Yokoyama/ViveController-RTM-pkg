@@ -42,5 +42,7 @@ HMD・コントローラ・トラッカーの位置姿勢を推定するデバ�
 ### SampleRobotController 
 ViveControllerが取得した位置情報をPC画面上に表示するRTコンポーネント
   
+## 4. マニュアル
+[VIVEコンポーネント群マニュアル](https://github.com/Shogo-Yokoyama/ViveController-RTM-pkg/ViveController-RTM-pkg_Manual。pdf)
   
 ### コンポーネントが出来次第, 随時更新いたします
