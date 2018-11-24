@@ -1,0 +1,39 @@
+
+#ifndef _VIVE_IDL_
+#define _VIVE_IDL_
+
+#include<ExtendedDataTypes.idl>
+#include<BasicDataType.idl>
+
+module ViveControl
+{
+	// 接続されている全てのHMDまたはトラッカーのためのデータ型
+	struct TimedVivePoseVelSeq
+	{
+		RTC::Time tm;
+		long deviceNum;
+		sequence<RTC::PoseVel3D> data;
+	};
+
+	// 接続されている単一のコントローラのためのデータ型
+	struct ViveController
+	{
+		RTC::PoseVel3D controllerPoseVel;
+		float trigger;
+		float padx;
+		float pady;
+		boolean gripButton;
+		boolean applicationMenuButton;
+		boolean systemButton;
+	};
+
+	// 接続されている全てのコントローラのためのデータ型
+	struct TimedViveControllerSeq
+	{
+		RTC::Time tm;
+		long deviceNum;
+		sequence<ViveController> data;
+	};
+};
+
+#endif _VIVE_IDL_
