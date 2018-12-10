@@ -41,6 +41,9 @@ HMD・コントローラ・トラッカーの位置姿勢を推定するデバ�
 
 ### [SampleRobotController](https://github.com/Shogo-Yokoyama/ViveController-RTM-pkg/tree/master/RTC/SampleRobotController)
 ViveControllerが取得した位置情報をPC画面上に表示するRTコンポーネント
+
+### ViveToVelocity
+VIVEコントローラを用いて移動ロボットKobukiを操作するRTコンポーネント
   
 ## 4. マニュアル
 [VIVEコンポーネント群マニュアル](https://github.com/Shogo-Yokoyama/ViveController-RTM-pkg/blob/master/ViveController-RTM-pkg_Manual.pdf)
