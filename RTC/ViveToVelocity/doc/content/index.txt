@@ -1,4 +1,4 @@
-﻿ViveToVelocityName - English
+﻿ViveCraneplusControllerName - English
 ========================
 
 .. toctree::
@@ -19,7 +19,7 @@ For a full list of classes and functions, see the `API documentation`_.
 Requirements
 ============
 
-ViveToVelocity uses the `CMake build system`. You will need at least version
+ViveCraneplusController uses the `CMake build system`. You will need at least version
 2.8 to be able to build the component.
 
 .. _`CMAke build system`:
@@ -43,24 +43,24 @@ recommended method of installation in Windows.
   to take effect before using the component.
 
 The component can be launched by double-clicking the
-``ViveToVelocityComp`` executable. The ``ViveToVelocity`` library
+``ViveCraneplusControllerComp`` executable. The ``ViveCraneplusController`` library
 is available for loading into a manager, using the initialisation function
-``ViveToVelocityInit``.
+``ViveCraneplusControllerInit``.
 
 From source
 -----------
 
-Follow these steps to install ViveToVelocity from source in any operating
+Follow these steps to install ViveCraneplusController from source in any operating
 system:
 
 - Download the source, either from the repository or a source archive,
   and extract it somewhere::
 
-    tar -xvzf ViveToVelocity-1.0.0.tar.gz
+    tar -xvzf ViveCraneplusController-1.0.0.tar.gz
 
 - Change to the directory containing the extracted source::
 
-    cd ViveToVelocity-1.0.0
+    cd ViveCraneplusController-1.0.0
 
 - Create a directory called ``build``::
 
@@ -91,10 +91,10 @@ system:
 The component is now ready for use. See the next section for instructions on
 configuring the component.
 
-ViveToVelocity can be launched in stand-alone mode by executing the
-``ViveToVelocityComp`` executable (installed into ``${prefix}/components/bin``).
-Alternatively, ``libViveToVelocity.so`` can be loaded into a manager, using the
-initialisation function ``ViveToVelocityInit``. This shared object can be found in
+ViveCraneplusController can be launched in stand-alone mode by executing the
+``ViveCraneplusControllerComp`` executable (installed into ``${prefix}/components/bin``).
+Alternatively, ``libViveCraneplusController.so`` can be loaded into a manager, using the
+initialisation function ``ViveCraneplusControllerInit``. This shared object can be found in
 ``${prefix}/components/lib`` or ``${prefix}/components/lib64``.
 
 
@@ -106,11 +106,8 @@ The available configuration parameters are described below:
 ================ ================== ================ ======
 Parameter        Data type          Default Value    Effect
 ================ ================== ================ ======
-debug            int                0                デバッグ無：0 / 有：1
-gainX            double             0.1              直進方向の速度ゲイン
-gainYaw          double             1                回転方向の速度ゲイン
-controllerIndex  int                0                情報を取得するVIVEコントローラの指定．早く接続されたコントローラから順に0,1,・・・と決まる.
-operationMode    int                0                0：パッドでの操作 / 1：モーションでの操作
+speed            int                20               
+controllerIndex  int                0                使用するVIVEコントローラの指定．最も早く接続されたVIVEコントローラを0とする
 ================ ================== ================ ======
 
 Ports
@@ -122,14 +119,15 @@ The ports provided by the component are described below:
 Name            Type        Data type                      Purpose
 =============== =========== ============================== =======
 Controller      InPort      ViveControl::TimedViveControllerSeq 
-Velocity        OutPort     RTC::TimedVelocity2D           
+ManipulatorCommonInterface_Common ServicePort JARA_ARM::ManipulatorCommonInterface_Common 
+ManipulatorCommonInterface_Middle ServicePort JARA_ARM::ManipulatorCommonInterface_Middle 
 =============== =========== ============================== =======
 
 Examples
 ========
 
 An example configuration file is provided in the
-``${prefix}/components/share/ViveToVelocity/examples/conf/`` directory.
+``${prefix}/components/share/ViveCraneplusController/examples/conf/`` directory.
 
 Changelog
 =========

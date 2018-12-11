@@ -1,4 +1,4 @@
-set(idls ${CMAKE_CURRENT_SOURCE_DIR}/VIVE.idl )
+set(idls ${CMAKE_CURRENT_SOURCE_DIR}/ManipulatorCommonInterface_Common.idl ${CMAKE_CURRENT_SOURCE_DIR}/ManipulatorCommonInterface_MiddleLevel.idl ${CMAKE_CURRENT_SOURCE_DIR}/VIVE.idl ${CMAKE_CURRENT_SOURCE_DIR}/ManipulatorCommonInterface_DataTypes.idl ${CMAKE_CURRENT_SOURCE_DIR}/BasicDataType.idl )
 
 macro(_IDL_OUTPUTS _idl _dir _result)
     set(${_result} ${_dir}/${_idl}SK.cc ${_dir}/${_idl}.hh

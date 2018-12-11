@@ -1,4 +1,4 @@
-add_subdirectory(ViveToVelocity)
+add_subdirectory(ViveCraneplusController)
 
 MAP_ADD_STR(hdrs "${PROJECT_NAME}/" headers)
 set(headers ${headers} PARENT_SCOPE)

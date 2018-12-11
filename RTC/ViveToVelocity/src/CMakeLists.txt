@@ -1,5 +1,5 @@
-set(comp_srcs ViveToVelocity.cpp )
-set(standalone_srcs ViveToVelocityComp.cpp)
+set(comp_srcs ViveCraneplusController.cpp )
+set(standalone_srcs ViveCraneplusControllerComp.cpp)
 
 if (DEFINED OPENRTM_INCLUDE_DIRS)
   string(REGEX REPLACE "-I" ";"
