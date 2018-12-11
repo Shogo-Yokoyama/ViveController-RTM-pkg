@@ -1,0 +1,54 @@
+# ViveToVelocity CMake config file
+#
+# This file sets the following variables:
+# ViveToVelocity_FOUND - Always TRUE.
+# ViveToVelocity_INCLUDE_DIRS - Directories containing the ViveToVelocity include files.
+# ViveToVelocity_IDL_DIRS - Directories containing the ViveToVelocity IDL files.
+# ViveToVelocity_LIBRARIES - Libraries needed to use ViveToVelocity.
+# ViveToVelocity_DEFINITIONS - Compiler flags for ViveToVelocity.
+# ViveToVelocity_VERSION - The version of ViveToVelocity found.
+# ViveToVelocity_VERSION_MAJOR - The major version of ViveToVelocity found.
+# ViveToVelocity_VERSION_MINOR - The minor version of ViveToVelocity found.
+# ViveToVelocity_VERSION_REVISION - The revision version of ViveToVelocity found.
+# ViveToVelocity_VERSION_CANDIDATE - The candidate version of ViveToVelocity found.
+
+message(STATUS "Found ViveToVelocity-@PROJECT_VERSION@")
+set(ViveToVelocity_FOUND TRUE)
+
+find_package(<dependency> REQUIRED)
+
+#set(ViveToVelocity_INCLUDE_DIRS
+#    "@CMAKE_INSTALL_PREFIX@/include/@PROJECT_NAME_LOWER@-@PROJECT_VERSION_MAJOR@"
+#    ${<dependency>_INCLUDE_DIRS}
+#    )
+#
+#set(ViveToVelocity_IDL_DIRS
+#    "@CMAKE_INSTALL_PREFIX@/include/@PROJECT_NAME_LOWER@-@PROJECT_VERSION_MAJOR@/idl")
+set(ViveToVelocity_INCLUDE_DIRS
+    "@CMAKE_INSTALL_PREFIX@/include/@CPACK_PACKAGE_FILE_NAME@"
+    ${<dependency>_INCLUDE_DIRS}
+    )
+set(ViveToVelocity_IDL_DIRS
+    "@CMAKE_INSTALL_PREFIX@/include/@CPACK_PACKAGE_FILE_NAME@/idl")
+
+
+if(WIN32)
+    set(ViveToVelocity_LIBRARIES
+        "@CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@/@CMAKE_SHARED_LIBRARY_PREFIX@@PROJECT_NAME_LOWER@@CMAKE_STATIC_LIBRARY_SUFFIX@"
+        ${<dependency>_LIBRARIES}
+        )
+else(WIN32)
+    set(ViveToVelocity_LIBRARIES
+        "@CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@/@CMAKE_SHARED_LIBRARY_PREFIX@@PROJECT_NAME_LOWER@@CMAKE_SHARED_LIBRARY_SUFFIX@"
+        ${<dependency>_LIBRARIES}
+        )
+endif(WIN32)
+
+set(ViveToVelocity_DEFINITIONS ${<dependency>_DEFINITIONS})
+
+set(ViveToVelocity_VERSION @PROJECT_VERSION@)
+set(ViveToVelocity_VERSION_MAJOR @PROJECT_VERSION_MAJOR@)
+set(ViveToVelocity_VERSION_MINOR @PROJECT_VERSION_MINOR@)
+set(ViveToVelocity_VERSION_REVISION @PROJECT_VERSION_REVISION@)
+set(ViveToVelocity_VERSION_CANDIDATE @PROJECT_VERSION_CANDIDATE@)
+

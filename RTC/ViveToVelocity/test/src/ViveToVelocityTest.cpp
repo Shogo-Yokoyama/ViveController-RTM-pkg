@@ -1,0 +1,194 @@
+﻿// -*- C++ -*-
+/*!
+ * @file  ViveToVelocityTest.cpp
+ * @brief converter from VIVE data to velocity
+ * @date $Date$
+ *
+ * $Id$
+ */
+
+#include "ViveToVelocityTest.h"
+
+// Module specification
+// <rtc-template block="module_spec">
+static const char* vivetovelocity_spec[] =
+  {
+    "implementation_id", "ViveToVelocityTest",
+    "type_name",         "ViveToVelocityTest",
+    "description",       "converter from VIVE data to velocity",
+    "version",           "1.0.0",
+    "vendor",            "rsdlab",
+    "category",          "data converter",
+    "activity_type",     "PERIODIC",
+    "kind",              "DataFlowComponent",
+    "max_instance",      "1",
+    "language",          "C++",
+    "lang_type",         "compile",
+    // Configuration variables
+    "conf.default.debug", "0",
+    "conf.default.gainX", "0.1",
+    "conf.default.gainYaw", "1",
+    "conf.default.controllerIndex", "0",
+    "conf.default.operationMode", "0",
+
+    // Widget
+    "conf.__widget__.debug", "text",
+    "conf.__widget__.gainX", "text",
+    "conf.__widget__.gainYaw", "text",
+    "conf.__widget__.controllerIndex", "text",
+    "conf.__widget__.operationMode", "text",
+    // Constraints
+
+    "conf.__type__.debug", "int",
+    "conf.__type__.gainX", "double",
+    "conf.__type__.gainYaw", "double",
+    "conf.__type__.controllerIndex", "int",
+    "conf.__type__.operationMode", "int",
+
+    ""
+  };
+// </rtc-template>
+
+/*!
+ * @brief constructor
+ * @param manager Maneger Object
+ */
+ViveToVelocityTest::ViveToVelocityTest(RTC::Manager* manager)
+    // <rtc-template block="initializer">
+  : RTC::DataFlowComponentBase(manager),
+    m_controllerIn("Controller", m_controller),
+    m_velocityOut("Velocity", m_velocity)
+
+    // </rtc-template>
+{
+}
+
+/*!
+ * @brief destructor
+ */
+ViveToVelocityTest::~ViveToVelocityTest()
+{
+}
+
+
+
+RTC::ReturnCode_t ViveToVelocityTest::onInitialize()
+{
+  // Registration: InPort/OutPort/Service
+  // <rtc-template block="registration">
+  // Set InPort buffers
+  addInPort("Velocity", m_velocityIn);
+  
+  // Set OutPort buffer
+  addOutPort("Controller", m_controllerOut);
+  
+  // Set service provider to Ports
+  
+  // Set service consumers to Ports
+  
+  // Set CORBA Service Ports
+  
+  // </rtc-template>
+
+  // <rtc-template block="bind_config">
+  // Bind variables and configuration variable
+  bindParameter("debug", m_debug, "0");
+  bindParameter("gainX", m_gainX, "0.1");
+  bindParameter("gainYaw", m_gainYaw, "1");
+  bindParameter("controllerIndex", m_controllerIndex, "0");
+  bindParameter("operationMode", m_operationMode, "0");
+  // </rtc-template>
+  
+  return RTC::RTC_OK;
+}
+
+/*
+RTC::ReturnCode_t ViveToVelocityTest::onFinalize()
+{
+  return RTC::RTC_OK;
+}
+*/
+
+/*
+RTC::ReturnCode_t ViveToVelocityTest::onStartup(RTC::UniqueId ec_id)
+{
+  return RTC::RTC_OK;
+}
+*/
+
+/*
+RTC::ReturnCode_t ViveToVelocityTest::onShutdown(RTC::UniqueId ec_id)
+{
+  return RTC::RTC_OK;
+}
+*/
+
+
+RTC::ReturnCode_t ViveToVelocityTest::onActivated(RTC::UniqueId ec_id)
+{
+  return RTC::RTC_OK;
+}
+
+
+RTC::ReturnCode_t ViveToVelocityTest::onDeactivated(RTC::UniqueId ec_id)
+{
+  return RTC::RTC_OK;
+}
+
+
+RTC::ReturnCode_t ViveToVelocityTest::onExecute(RTC::UniqueId ec_id)
+{
+  return RTC::RTC_OK;
+}
+
+/*
+RTC::ReturnCode_t ViveToVelocityTest::onAborting(RTC::UniqueId ec_id)
+{
+  return RTC::RTC_OK;
+}
+*/
+
+/*
+RTC::ReturnCode_t ViveToVelocityTest::onError(RTC::UniqueId ec_id)
+{
+  return RTC::RTC_OK;
+}
+*/
+
+/*
+RTC::ReturnCode_t ViveToVelocityTest::onReset(RTC::UniqueId ec_id)
+{
+  return RTC::RTC_OK;
+}
+*/
+
+/*
+RTC::ReturnCode_t ViveToVelocityTest::onStateUpdate(RTC::UniqueId ec_id)
+{
+  return RTC::RTC_OK;
+}
+*/
+
+/*
+RTC::ReturnCode_t ViveToVelocityTest::onRateChanged(RTC::UniqueId ec_id)
+{
+  return RTC::RTC_OK;
+}
+*/
+
+
+
+extern "C"
+{
+ 
+  void ViveToVelocityTestInit(RTC::Manager* manager)
+  {
+    coil::Properties profile(vivetovelocity_spec);
+    manager->registerFactory(profile,
+                             RTC::Create<ViveToVelocityTest>,
+                             RTC::Delete<ViveToVelocityTest>);
+  }
+  
+};
+
+
