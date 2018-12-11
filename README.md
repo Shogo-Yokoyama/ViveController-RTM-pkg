@@ -44,6 +44,9 @@ ViveControllerが取得した位置情報をPC画面上に表示するRTコン�
 
 ### ViveToVelocity
 VIVEコントローラを用いて移動ロボットKobukiを操作するRTコンポーネント
+
+### ViveCraneplusController
+VIVEコントローラを用いてロボットアームKobukiを操作するRTコンポーネント
   
 ## 4. マニュアル
 [VIVEコンポーネント群マニュアル](https://github.com/Shogo-Yokoyama/ViveController-RTM-pkg/blob/master/ViveController-RTM-pkg_Manual.pdf)
