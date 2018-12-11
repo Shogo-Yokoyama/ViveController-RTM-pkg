@@ -1,0 +1,54 @@
+# ViveCraneplusController CMake config file
+#
+# This file sets the following variables:
+# ViveCraneplusController_FOUND - Always TRUE.
+# ViveCraneplusController_INCLUDE_DIRS - Directories containing the ViveCraneplusController include files.
+# ViveCraneplusController_IDL_DIRS - Directories containing the ViveCraneplusController IDL files.
+# ViveCraneplusController_LIBRARIES - Libraries needed to use ViveCraneplusController.
+# ViveCraneplusController_DEFINITIONS - Compiler flags for ViveCraneplusController.
+# ViveCraneplusController_VERSION - The version of ViveCraneplusController found.
+# ViveCraneplusController_VERSION_MAJOR - The major version of ViveCraneplusController found.
+# ViveCraneplusController_VERSION_MINOR - The minor version of ViveCraneplusController found.
+# ViveCraneplusController_VERSION_REVISION - The revision version of ViveCraneplusController found.
+# ViveCraneplusController_VERSION_CANDIDATE - The candidate version of ViveCraneplusController found.
+
+message(STATUS "Found ViveCraneplusController-@PROJECT_VERSION@")
+set(ViveCraneplusController_FOUND TRUE)
+
+find_package(<dependency> REQUIRED)
+
+#set(ViveCraneplusController_INCLUDE_DIRS
+#    "@CMAKE_INSTALL_PREFIX@/include/@PROJECT_NAME_LOWER@-@PROJECT_VERSION_MAJOR@"
+#    ${<dependency>_INCLUDE_DIRS}
+#    )
+#
+#set(ViveCraneplusController_IDL_DIRS
+#    "@CMAKE_INSTALL_PREFIX@/include/@PROJECT_NAME_LOWER@-@PROJECT_VERSION_MAJOR@/idl")
+set(ViveCraneplusController_INCLUDE_DIRS
+    "@CMAKE_INSTALL_PREFIX@/include/@CPACK_PACKAGE_FILE_NAME@"
+    ${<dependency>_INCLUDE_DIRS}
+    )
+set(ViveCraneplusController_IDL_DIRS
+    "@CMAKE_INSTALL_PREFIX@/include/@CPACK_PACKAGE_FILE_NAME@/idl")
+
+
+if(WIN32)
+    set(ViveCraneplusController_LIBRARIES
+        "@CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@/@CMAKE_SHARED_LIBRARY_PREFIX@@PROJECT_NAME_LOWER@@CMAKE_STATIC_LIBRARY_SUFFIX@"
+        ${<dependency>_LIBRARIES}
+        )
+else(WIN32)
+    set(ViveCraneplusController_LIBRARIES
+        "@CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@/@CMAKE_SHARED_LIBRARY_PREFIX@@PROJECT_NAME_LOWER@@CMAKE_SHARED_LIBRARY_SUFFIX@"
+        ${<dependency>_LIBRARIES}
+        )
+endif(WIN32)
+
+set(ViveCraneplusController_DEFINITIONS ${<dependency>_DEFINITIONS})
+
+set(ViveCraneplusController_VERSION @PROJECT_VERSION@)
+set(ViveCraneplusController_VERSION_MAJOR @PROJECT_VERSION_MAJOR@)
+set(ViveCraneplusController_VERSION_MINOR @PROJECT_VERSION_MINOR@)
+set(ViveCraneplusController_VERSION_REVISION @PROJECT_VERSION_REVISION@)
+set(ViveCraneplusController_VERSION_CANDIDATE @PROJECT_VERSION_CANDIDATE@)
+
