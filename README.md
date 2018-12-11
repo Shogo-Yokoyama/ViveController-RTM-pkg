@@ -48,11 +48,9 @@ VIVEコントローラを用いて移動ロボットKobukiを操作するRTコ�
 - コントローラ上のパッドの接触位置に応じた操作
 - コントローラの前後左右上下への動きに応じた操作
 
-### ViveCraneplusController
+### [ViveCraneplusController](https://github.com/Shogo-Yokoyama/ViveController-RTM-pkg/tree/master/RTC/ViveCraneplusController)
 VIVEコントローラを用いてロボットアームKobukiを操作するRTコンポーネント
-コンフィグより以下の操作方法が利用できる
-- コントローラ上のパッドの接触位置に応じたアーム先端の操作
-- コントローラの動きに応じたアーム先端の操作
+コントローラの動きに応じたアーム先端の操作が可能
   
 ## 4. マニュアル
 [VIVEコンポーネント群マニュアル](https://github.com/Shogo-Yokoyama/ViveController-RTM-pkg/blob/master/ViveController-RTM-pkg_Manual.pdf)
