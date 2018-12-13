@@ -51,7 +51,11 @@ VIVEコントローラを用いて移動ロボットKobukiを操作するRTコ�
 ### [ViveCraneplusController](https://github.com/Shogo-Yokoyama/ViveController-RTM-pkg/tree/master/RTC/ViveCraneplusController)
 VIVEコントローラを用いてロボットアームKobukiを操作するRTコンポーネント  
 コントローラの動きに応じたアーム先端の操作が可能
-  
+
+### [ViveSeednoidController](https://github.com/Shogo-Yokoyama/ViveController-RTM-pkg/tree/master/RTC/ViveSeednoidController)
+VIVEデバイスを用いて双腕ロボットであるSEED-Noidを操作するコンポーネント  
+今回は右腕の制御のみであり，左腕・頭部等の制御は今後にかけて実装する予定 　
+
 ## 4. マニュアル
 [VIVEコンポーネント群マニュアル](https://github.com/Shogo-Yokoyama/ViveController-RTM-pkg/blob/master/ViveController-RTM-pkg_Manual.pdf)
   
