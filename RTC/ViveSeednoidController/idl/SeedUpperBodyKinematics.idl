@@ -1,0 +1,45 @@
+#ifndef SEEDUPPERBODYKINEMATICSINTERFACE_IDL
+#define SEEDUPPERBODYKINEMATICSINTERFACE_IDL
+#include "BasicDataType.idl"
+module IK_RTC{
+    
+  struct RETURN_ID {
+    long id;
+    string comment;
+  };
+  
+  struct WaistFrame{
+    double roll;
+    double pitch;
+    double yaw;
+  };
+
+  typedef sequence<double> Rotation;
+  typedef sequence<double> FramePos;
+  typedef sequence<double> JointPos;
+  typedef unsigned long ULONG;
+
+  const long OK = 0;
+  const long NG = -1;
+  const long STATUS_ERR = -2;
+  const long VALUE_ERR = -3;
+  const long NOT_SV_ON_ERR = -4;
+  const long FULL_MOTION_QUEUE_ERR = -5;
+  const long NOT_IMPLEMENTED = -6;
+
+
+
+  interface RightArmKinematicsInterface {
+    RETURN_ID solveRightArmIkSetWaistJoint(in Rotation eerot, in FramePos eetrans, in WaistFrame WaistPos, in JointPos nowJointPos ,out JointPos solRightJointPos);
+    RETURN_ID solveRightArmIk(in Rotation eerot, in FramePos eetrans, in JointPos nowJointPos, out JointPos solRightJointPos);
+    RETURN_ID solveRightArmFk(in JointPos RightJointPos, out Rotation eerot, out FramePos eetrans);
+  };
+  
+  interface LeftArmKinematicsInterface {
+    RETURN_ID solveLeftArmIkSetWaistJoint(in Rotation eerot, in FramePos eetrans, in WaistFrame WaistPos, in JointPos nowJointPos ,out JointPos solLeftJointPos);
+    RETURN_ID solveLeftArmIk(in Rotation eerot, in FramePos eetrans, in JointPos nowJointPos, out JointPos solLeftJointPos);
+    RETURN_ID solveLeftArmFk(in JointPos LeftJointPos, out Rotation eerot, out FramePos eetrans);
+  };
+  
+};
+#endif //SEEDUPPERBODYKINEMATICSINTERFACE_IDL

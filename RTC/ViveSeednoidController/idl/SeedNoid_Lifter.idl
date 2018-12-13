@@ -1,0 +1,85 @@
+#ifndef SEEDNOID_LIFTER_IDL
+#define SEEDNOID_LIFTER_IDL
+
+#include "BasicDataType.idl"
+#include "ExtendedDataTypes.idl"
+
+module SeedNoid_Lifter {
+
+  struct LifterAngle
+  {
+    //Angle of Top Lifter in degrees
+    double top;
+    //Angle of Bottom Lifter in degrees
+    double bottom;
+  };
+
+  struct LimitValue{
+    double upper;
+    double lower;
+  };
+
+  typedef sequence<LimitValue> LimitSeq;
+  typedef sequence<double> DoubleSeq;
+  typedef unsigned long ULONG;
+
+  enum RETURN_VALUE
+  {
+    // COMMON
+    RETURN_OK,
+    RETURN_MOVE_OK,
+    RETURN_INVALID_PARAMETER,
+    RETURN_NOT_FOUND,
+    RETURN_OUT_OF_RANGE,
+    RETURN_ERROR,
+
+    RETVAL_ARRIVAL_OK,
+    RETVAL_EMERGENCY,
+
+    RETVAL_SET_PARAM,
+
+    RETVAL_MOVE_START,
+    RETVAL_MOVE_STOP
+  };
+
+  interface LifterPoseInterface
+  {
+    //Set Lifter Move Time
+    RETURN_VALUE setLifterTime(in double MoveTime);
+    //Send Lifter Angle
+    RETURN_VALUE sendLifterAngle(in LifterAngle targetLifterAngle);
+    //Send Lifter Pose
+    RETURN_VALUE sendLifterPose(in RTC::Point3D targetLifterPose);
+    //Get Lifter Angle
+    RETURN_VALUE getLifterAngle(out LifterAngle currentLifterAngle);
+    //Get Lifter Pose
+    RETURN_VALUE getLifterPose(out RTC::Point3D currentLifterPose);
+    //Get Software Limit
+    RETURN_VALUE getSoftLimitLifter(out LimitSeq softLimit);
+    //Set Software Limit
+    RETURN_VALUE setSoftLimitLifter(in LimitSeq softLimit);
+    //Get Max Speed Lifter
+    RETURN_VALUE getMaxSpeedLifter(out DoubleSeq speed); 
+    //Get Min Accel Time Lifter
+    RETURN_VALUE getMinAccelTimeLifter(out double aclTime);
+    //pause
+    RETURN_VALUE pause();
+    //resume
+    RETURN_VALUE resume();
+    //stop
+    RETURN_VALUE stop();
+    //Set Accel Time Lifter
+    RETURN_VALUE setAccelTimeLifter(in double aclTime);
+    //Set Max Speed Lifter
+    RETURN_VALUE setMaxSpeedLifter(in DoubleSeq speed);
+    //Set Min Accel Time Lifter
+    RETURN_VALUE setMinAccelTimeLifter(in double aclTime);
+    //Set Speed Lifter
+    RETURN_VALUE setSpeedLifter(in ULONG spdRatio);
+    //Get Speed Lifter
+    RETURN_VALUE getSpeedLifter(out ULONG spdRatio);
+
+  };
+};
+
+#endif     /* SEEDNOID_LIFTER_IDL */

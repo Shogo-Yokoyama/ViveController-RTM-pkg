@@ -1,0 +1,93 @@
+#ifndef WAISTNECKINTERFACE_IDL
+#define WAISTNECKINTERFACE_IDL
+#include "BasicDataType.idl"
+module WaistNeck{
+   
+  struct RETURN_ID {
+    long id;
+    string comment;
+  };
+  
+  struct LimitValue{
+    double upper;
+    double lower;
+  };
+
+  typedef sequence<double> DoubleSeq;
+  typedef sequence<double> NeckPos;
+  typedef sequence<double> WaistPos;
+  typedef sequence<LimitValue> LimitSeq;
+  typedef unsigned long ULONG;
+
+  struct ManipInfo {
+    string manufactur;
+    string type;
+    ULONG axisNum;
+    ULONG cmdCycle;
+  };
+  const ULONG CONST_BINARY_00000001 = 0x01; //isServoOn
+  const ULONG CONST_BINARY_00000010 = 0x02; //isMoving
+  const ULONG CONST_BINARY_00000100 = 0x04; //isAlarmed
+  const ULONG CONST_BINARY_00001000 = 0x08; //isBufferFull
+  
+  const long OK = 0;
+  const long NG = -1;
+  const long STATUS_ERR = -2;
+  const long VALUE_ERR = -3;
+  const long NOT_SV_ON_ERR = -4;
+  const long FULL_MOTION_QUEUE_ERR = -5;
+  const long NOT_IMPLEMENTED = -6;
+  
+  interface NeckInterface {
+    //Common
+    RETURN_ID getFeedbackPosNeck(out NeckPos pos);
+    RETURN_ID getNeckInfo(out ManipInfo mInfo);
+    RETURN_ID getSoftLimitNeck(out LimitSeq softLimit);
+    RETURN_ID getState(out ULONG state);
+    RETURN_ID servoOFF();
+    RETURN_ID servoON();
+    RETURN_ID setSoftLimitNeck(in LimitSeq softLimit);
+    //Middle
+    RETURN_ID getMaxSpeedNeck(out DoubleSeq speed); 
+    RETURN_ID getMinAccelTimeNeck(out double aclTime);
+    RETURN_ID movePTPNeckAbs(in NeckPos neckPoints);
+    RETURN_ID movePTPNeckRel(in NeckPos neckPoints);
+    RETURN_ID pause();
+    RETURN_ID resume();
+    RETURN_ID stop();
+    RETURN_ID setAccelTimeNeck(in double aclTime);
+    RETURN_ID setMaxSpeedNeck(in DoubleSeq speed);
+    RETURN_ID setMinAccelTimeNeck(in double aclTime);
+    RETURN_ID setSpeedNeck(in ULONG spdRatio);
+    RETURN_ID getSpeedNeck(out ULONG spdRatio);
+    RETURN_ID movePTPNeckAbsCmdCycle(in NeckPos neckPoints);
+    RETURN_ID movePTPNeckRelCmdCycle(in NeckPos neckPoints);
+  };
+
+  interface WaistInterface {
+    //Common
+    RETURN_ID getFeedbackPosWaist(out WaistPos pos);
+    RETURN_ID getWaistInfo(out ManipInfo mInfo);
+    RETURN_ID getSoftLimitWaist(out LimitSeq softLimit);
+    RETURN_ID getState(out ULONG state);
+    RETURN_ID servoOFF();
+    RETURN_ID servoON();
+    RETURN_ID setSoftLimitWaist(in LimitSeq softLimit);
+    //Middle
+    RETURN_ID getMaxSpeedWaist(out DoubleSeq speed); 
+    RETURN_ID getMinAccelTimeWaist(out double aclTime);
+    RETURN_ID movePTPWaistAbs(in WaistPos waistPoints);
+    RETURN_ID movePTPWaistRel(in WaistPos waistPoints);
+    RETURN_ID pause();
+    RETURN_ID resume();
+    RETURN_ID stop();
+    RETURN_ID setAccelTimeWaist(in double aclTime);
+    RETURN_ID setMaxSpeedWaist(in DoubleSeq speed);
+    RETURN_ID setMinAccelTimeWaist(in double aclTime);
+    RETURN_ID setSpeedWaist(in ULONG spdRatio);
+    RETURN_ID getSpeedWaist(out ULONG spdRatio);
+    RETURN_ID movePTPWaistAbsCmdCycle(in WaistPos waistPoints);
+    RETURN_ID movePTPWaistRelCmdCycle(in WaistPos waistPoints);
+  };
+};
+#endif //WAISTNECKINTERFACE_IDL
