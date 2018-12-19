@@ -38,6 +38,7 @@ HMD・コントローラ・トラッカーの位置姿勢を推定するデバ�
 - VIVE HMDの位置姿勢の管理
 - VIVEトラッカーの位置姿勢の管理
 - VIVE HMDへの画像の出力  
+＊HMDへの映像表示は画像サイズや視差を考慮していないため不完全
 
 ### [SampleRobotController](https://github.com/Shogo-Yokoyama/ViveController-RTM-pkg/tree/master/RTC/SampleRobotController)
 ViveControllerが取得した位置情報をPC画面上に表示するRTコンポーネント
