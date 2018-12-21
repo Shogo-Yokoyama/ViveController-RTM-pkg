@@ -60,4 +60,5 @@ VIVEデバイスを用いて双腕ロボットであるSEED-Noidを操作する�
 ## 4. マニュアル
 [VIVEコンポーネント群マニュアル](https://github.com/Shogo-Yokoyama/ViveController-RTM-pkg/blob/master/ViveController-RTM-pkg_Manual.pdf)
   
-### コンポーネントが出来次第, 随時更新いたします
+### コンポーネントの作成・修正の度, 随時更新いたします
+### 18年12月14日までの成果物のマニュアルの作成を急いで行ないます
