@@ -50,7 +50,7 @@ VIVEコントローラを用いて移動ロボットKobukiを操作するRTコ�
 - コントローラの前後左右上下への動きに応じた操作
 
 ### [ViveCraneplusController](https://github.com/Shogo-Yokoyama/ViveController-RTM-pkg/tree/master/RTC/ViveCraneplusController)
-VIVEコントローラを用いてロボットアームKobukiを操作するRTコンポーネント  
+VIVEコントローラを用いてロボットアームCRANE+を操作するRTコンポーネント  
 コントローラの動きに応じたアーム先端の操作が可能
 
 ### [ViveSeednoidController](https://github.com/Shogo-Yokoyama/ViveController-RTM-pkg/tree/master/RTC/ViveSeednoidController)
